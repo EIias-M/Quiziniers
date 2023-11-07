@@ -1,0 +1,14 @@
+
+<app-user-form (usersUpdated)="onUsersUpdated($event)"></app-user-form>
+<form [formGroup]="recherche">
+  <div class="search-bar" id="searchDiv">
+    <input for="motrecherche" type="text" id="inputText" placeholder="Ecrire le nom d'un patient"[formControlName]="'motrecherche'" >
+    <div></div>
+    <button type="submit" id="search" (click)="getUsers()">Lancer la recherche</button>
+  </div>
+</form>
+<div class="user-list">
+    <div class="card" data-testid="user-list" *ngFor="let user of users">
+        <app-user  [user]="user" (deleteUser)="deleteUser($event)"></app-user>
+    </div>
+</div>

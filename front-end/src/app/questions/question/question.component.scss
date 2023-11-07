@@ -1,0 +1,373 @@
+@import "../../../styles/variables";
+@import "../../../styles/card";
+.card {
+  border-top-left-radius: 70%;
+  border-top-right-radius: 70%;
+  border-bottom-left-radius: 70%;
+  border-bottom-right-radius: 70%;
+  display: inline-block;
+  border : none;
+  justify-content: center;
+  background-color: #ffffff;
+  position: absolute;
+  height: 91%;
+  width: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+}
+
+#center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+#confirmbutton{
+  position: absolute;
+  background-color: $blue;
+  border: solid 1px $blue;
+  color: $white;
+  font-weight: bold;
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.answer {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  fill: currentcolor;
+  font-family: "Century Gothic",CenturyGothic,AppleGothic,sans-serif;
+  font-style: normal;
+  font-size: 100%;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  margin-left: 35%;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  color: #0042ab;
+  will-change: transform,opacity;
+  z-index: 10;
+  margin: auto;
+  padding: 0.5em 1em;
+  margin-top: 5px;
+  margin-bottom: 0%;
+  position: relative;
+}
+
+.answer:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.answer:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.answer:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.answer:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.answer:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.answer:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.answer:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-card:hover {
+  cursor: pointer;
+}
+
+#bm{
+  position: absolute;
+  margin-left: 67%;
+  margin-top: -7%;
+  font-size: 110%;
+  z-index: 10;
+
+
+  font-weight: bold;
+}
+
+#correct{
+  color: white;
+  font-weight: bold;
+  background-color: forestgreen;
+  padding: 5px;
+  border-radius: 10px;
+}
+#incorrect{
+  color: white;
+  font-weight: bold;
+  background-color: red;
+  padding: 5px;
+  border-radius: 10px;
+}
+.questionImage {
+  position: absolute;
+  transform: scale(1) translateX(-50%);
+  width: 30%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  z-index:10;
+  left: 50%;
+  margin-top: -21%;
+}
+
+h2{
+  vertical-align: text-top;
+}
+
+.question-question{
+  transform: scale(1) translateX(-50%);
+  width: 64%;
+  overflow-wrap: break-word;
+  max-width: 60%;
+  left: 50%;
+  margin-top: 1%;
+  position: absolute;
+  font-size: 112%;
+  border-radius: 100%;
+  z-index:10;
+  background-color: unset;
+}
+
+#yo{
+  padding-right: 3%;
+  padding-left: 3%;
+}
+
+
+.correct-answer {
+  background-color: #00f500;
+  color: #000;
+}
+
+.incorrect-answer {
+  background-color: #ff6200;
+  color: #000;
+}
+
+.notselected {
+  background-color: #fff;
+  color: #000;
+}
+
+.tableanswer{
+  width: 100%;
+}
+
+.selected-answer {
+  background-color: #0042ab;
+  color: #ffffff;
+}
+
+#prec{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-250%) translateY(-300%);
+}
+
+#suiv, #terminer{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(180%) translateY(-300%);
+}
+
+#points{
+  position: absolute;
+  margin-left: 80%;
+  font-size: 115%;
+  font-weight: bold;
+  color: white;
+  background-color: darkslateblue;
+  margin-top: -2%;
+  padding: 3.5px;
+  border-radius: 10px;
+  transform: scale(1.25);
+}
+
+#zoom{
+  position: absolute;
+  margin-left: 7%;
+  z-index: 10;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+#switch{
+  position: absolute;
+  margin:unset;
+  margin-top: 2%;
+}
+
+#loupe{
+  vertical-align: bottom;
+}
+
+.toggle-switch {
+
+  display: inline-block;
+  width: 56px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: background-color 0.2s;
+  position: absolute;
+  margin-top: 5%;
+  margin-left: 10%;
+}
+
+.toggle-switch:before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+  transition: transform 0.2s;
+}
+
+.toggle-switch.active {
+  background-color: #4CAF50;
+}
+
+
+.toggle-switch.active:before {
+  transform: translateX(26px);
+}
+
+.content{
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  width: 100%;
+  top:50%;
+  transform: translateX(-50%) translateY(20%);
+  margin-top: 3.5%;
+  z-index: 10;
+}
+
+td{
+  z-index: 20;
+}
+
+.tablestats {
+  width: 100%;
+}
+
+.th1, .td1, #res {
+  padding: 0.5rem;
+  text-align: left;
+  border: 2px solid #ddd;
+  color: white;
+  font-weight: bold;
+  background-color: $blue;
+  text-align: center;
+  border-radius: 10px;
+
+}
+
+#res{
+  width: 35%;
+  margin: 4% 5px 5px;
+}
+
+#nbrep{
+  color: #4CAF50;
+  font-size: 180%;
+  font-weight: bold;
+  margin: unset;
+  margin-top: 1%;
+}
+
+
+
+
+.answerAbs{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-5%);
+
+  z-index: 10;
+}
+
+.card {
+  overflow:hidden;
+}
+
+.boiteVideo{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  margin-top: -7%;
+}
+
+.review{
+  width: 70%;
+  font-size: 130%;
+  font-weight: bold;
+  color: $blue;
+  padding: 5px;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+#restartbutton, #homebutton{
+  position: absolute;
+  left : 50%;
+  transform: translateX(-50%);
+  top: 80%
+}
+
+#homebutton{
+  top: 90%;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.fontsize, #fontsize2, #fontsize {
+  font-size: 120%;
+}
+

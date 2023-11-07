@@ -1,0 +1,34 @@
+<div class="card" id="form1">
+    <h2>Ajouter un patient</h2>
+    <form class="user-form" [formGroup]="userForm">
+      <label for="firstName">
+        Prénom <br>
+        <input class="input-custom" type="text" id="firstName" [formControlName]="'firstName'">
+      </label>
+      <br>
+      <label for="lastName">
+       Nom de famille <br>
+        <input class="input-custom" type="text" id="lastName" [formControlName]="'lastName'">
+      </label>
+      <br>
+      <label for="photoUrl">
+        Photo de profil <br>
+        <input class="input-custom" type="text" id="photoUrl" [formControlName]="'photoUrl'">
+      </label>
+      <br>
+      <button data-testid="btnCreate" class="button-card" (click)="addUser()" routerLink="/home-page-admin/">Créer</button>
+    </form>
+</div>
+  <div class="card" id="form2">
+  <form class="userdeleteform" [formGroup]="userDeleteForm">
+    <h2 for="id">Supprimer un patient</h2>
+    <select  class="input-custom" id="id" [formControlName]="'id'">
+      <option *ngFor="let user of users" [value]="user.id">{{user.firstName}} {{user.lastName}}</option>
+    </select>
+    <br>
+    <button
+       class="button-card" (click)="deleteUser()" routerLink="/home-page-admin/">Supprimer le patient</button>
+    </form>
+  </div>
+<br>
+

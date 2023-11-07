@@ -1,0 +1,13 @@
+<div class="card">
+    <h2>
+        <img class="image" [src]="quiz.image"/>
+    </h2>
+    <button class="button-card"  routerLink="/question/{{quiz.id}}" data-testid="selectquizbutton"> Cliquez pour séléctionner : {{quiz.name}}
+    </button>
+  <div class="btnDM" [ngStyle]="{'visibility': visibility}" >
+    <button class="button-card" id="del" (click)="delete()" data-testid="deletequizbutton">Supprimer</button>
+    <button class="button-card" id="edit" routerLink="/edit-quiz/{{quiz.id}}" data-testid="editquizbutton">Modifier</button>
+  </div>
+</div>
+
+

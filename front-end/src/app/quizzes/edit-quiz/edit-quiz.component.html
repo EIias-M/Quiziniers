@@ -1,0 +1,45 @@
+<ng-container *ngIf="quiz">
+
+<div class="card">
+
+<button class="button-card" routerLink="/quiz-list/{{this.quiz.theme}}">Retour</button>
+  <h2>Modifier le quizz</h2>
+  <div>
+  <div>
+    <form [formGroup]="quizForm">
+
+      <label for="name">Nom du quizz: </label>
+      <input id="name" type="text" formControlName="name">
+      <br>
+      <label for="image">Image: </label>
+      <input id="image" type="text" formControlName="image">
+      <br>
+      <label for="theme">Thème du quizz </label>
+      <select id="theme" formControlName="theme">
+        <option [ngValue]="null" [disabled]="true" >Choisissez un thème</option>
+        <option *ngFor="let theme of themes" [value]="theme.id" (click)="setTheme(theme.id, theme.name)">{{theme.name}}</option>
+      </select>
+
+
+    </form>
+    <br>
+  </div>
+  <button class="button-card"(click)="updateQuiz()" routerLink="/quiz-list/{{this.quiz.theme}}" data-testid = "confirmereditquiz">Confirmer</button>
+    <div>
+      <form class="delete-form" [formGroup]="deleteForm">
+        <select [formControlName]="'id'" id="id">
+          <option [ngValue]="null" [disabled]="true" >Choisissez une question à supprimer</option>
+          <option *ngFor="let question of questionList" [value]="question.id">{{question.label}}</option>
+        </select>
+        <br>
+        <button class="button-card" type="submit" (click)="deleteQuestion()" routerLink="/quiz-list/{{this.quiz.theme}}">Supprimer la question</button>
+      </form>
+    </div>
+  </div>
+</div>
+  <div></div>
+  <app-question-form [quiz]="quiz"></app-question-form>
+</ng-container>
+
+
+

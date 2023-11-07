@@ -1,0 +1,13 @@
+
+<div class="card">
+  <form class="quiz-form" [formGroup]="mdp">
+    <label for="label">
+      Mot de passe <br>
+      <input class="input-custom" type="password" id="label" data-testid="passwordinput" placeholder="mot de passe" [formControlName]="'label'">
+    </label>
+    <br>
+    <div class="answer" >
+      <button (click)="verifMdp()" class="button-card" data-testid="passwordbutton" >Se connecter</button>
+    </div>
+  </form>
+</div>
